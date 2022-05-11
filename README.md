@@ -8,6 +8,8 @@ Olemme tehneet erittäin helppokäyttöisen botin
 
 Python-versio 3.8.0 tai uudempi vaaditaan, jos aiot suorittaa tiedoston lähdekoodista.
 
+Tekstissä voi olla huono suomi, koska se on minun kolmas kieli
+
 [Kaikki 51 komentoa](manual.md)
 
 ```
