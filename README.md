@@ -4,7 +4,7 @@
 Nopea ja ilmainen nuke botti
 
 
-Olemme yhdistäneet ketjutuksen, jonon, pyynnöt ja discord.py API:n, jotta komennot toimivat mahdollisimman nopeasti. Jos näet nopeusrajoituksen kirjautuneena konsoliisi käyttäessäsi tätä komentosarjaa, se johtuu yksinkertaisesti siitä, että <ins>se toimii liian nopeasti</ins>.
+Olemme tehneet erittäin helppokäyttöisen botin
 
 Python-versio 3.8.0 tai uudempi vaaditaan, jos aiot suorittaa tiedoston lähdekoodista.
 
@@ -38,7 +38,7 @@ Python-versio 3.8.0 tai uudempi vaaditaan, jos aiot suorittaa tiedoston lähdeko
 
 ## Miksi tietokoneeni sanoi, että se on vaarallinen tiedosto/sisältää viruksen?
 * Aion tehdä itselleni selväksi - se ei ole virus.
-* Ihmisille, jotka eivät luota julkaistuihin versioihin ja jotka eivät halua ladata pythonia, on toinenkin tapa käyttää bottia. Käytä https://repl.it/, luo tili, valitse "uusi repl" vasemmasta yläkulmasta, valitse python, klikkaa "luo repl", kopioi ja liitä [lähdekoodi](https://raw.githubusercontent .com/Ossi05/Discord-Bot/master/c-realV2.py) repliin ja napsauta yläreunassa olevaa Suorita-painiketta.
+* Ihmisille, jotka eivät luota julkaistuihin versioihin ja jotka eivät halua ladata pythonia, on toinenkin tapa käyttää bottia. Käytä https://repl.it/, luo tili, valitse "uusi repl" vasemmasta yläkulmasta, valitse python, klikkaa "luo repl", kopioi ja liitä [lähdekoodi] repliin ja napsauta yläreunassa olevaa Suorita-painiketta.
 
 ## Pääkäyttö (Lue `.config` komento alla ennen yhteydenottoa)
 
