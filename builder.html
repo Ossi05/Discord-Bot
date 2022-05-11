@@ -2,10 +2,10 @@
 <html>    
 <head lang="en-US">
     <meta charset="UTF-8" />
-    <title>C-REAL builder</title>
+    <title>botti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
-        /* this was poorly written not recommending reading it */
+        /* Tämä on huonosti tehty älä lue tätä */
 
         :root {
             font-family: arial; 
@@ -27,7 +27,7 @@
             color: var(--white);
         }
 
-        /* radio buttons */
+        /* radio painikkeet */
         .bot_status {
             margin: 1em 0;
         }
@@ -298,7 +298,7 @@
         }
 
         .inv {
-            /* Prevent the browser to load all the text again*/
+            /* Estä selainta lataamasta kaikkea tekstiä uudelleen*/
             opacity: 0; 
             cursor: default;
         }
@@ -662,7 +662,7 @@ function acceptInput(ID, listName) {
 
         allLists[ID].push(buffer);
         buffer = [];
-        // XSS is really buggy to the lists so just put a simple patch to it will increase the user experience
+        // XSS on todella buginen listoille, joten pelkkä korjaustiedoston lisääminen siihen lisää käyttökokemusta
         for(let i = 0, place = coloringPlaces.shift(), str=input.value[i]; i < input.value.length; i++, str=input.value[i])
             if(i == place) {
                 buffer.push('<i class="special-character">');
@@ -722,7 +722,7 @@ function saveAll() {
     }
 
     downloadFile(
-        JSON.stringify(config, null, 4), // indent with 4 spaces
+        JSON.stringify(config, null, 4), // sisennys 4 välilyönnillä
         'default.json'
     )
 }
@@ -733,18 +733,18 @@ function downloadFile(data, fileName, type="text/plain") {
     a.style.display = "none";
     document.body.appendChild(a);
 
-    // Set the HREF to a Blob representation of the data to be downloaded
+    // Aseta HREF ladattavien tietojen Blob-esitykseen
     a.href = window.URL.createObjectURL(
     new Blob([data], {type})
     );
 
-    // Use download attribute to set set desired file name
+    // Käytä latausattribuuttia asettaaksesi haluamasi tiedostonimen
     a.setAttribute("download", fileName);
 
-    // Trigger the download by simulating click
+    // Käynnistä lataus simuloimalla napsautusta
     a.click();
 
-    // Cleanup
+    // Puhdistus
     window.URL.revokeObjectURL(a.href);
     document.body.removeChild(a);
 }
