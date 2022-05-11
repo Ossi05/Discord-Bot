@@ -53,3 +53,6 @@ Python-versio 3.8.0 tai uudempi vaaditaan, jos aiot suorittaa tiedoston lähdeko
 * Jos kohtaat kaatumisen, ilmoita siitä [github-sivun] "ongelmiin"
 * Jos botti ei vastaa mihinkään komentoihin, tarkista, onko konsoli korostus-/merkintätilassa. Jos se on korostus-/merkintätila, napsauta konsolia ja paina mitä tahansa näppäimistön näppäintä, niin se korjaantuu.
 * Jos näet konsolissa joukon valkoisia virheitä, jotka sitten kaatuvat, se tarkoittaa, että se on 90 % virhe. Joten tee siitä uusi numero.
+
+
+##Lue lisää uwuWhat'sThis.md tiedostosta
