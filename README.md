@@ -31,10 +31,6 @@ Python-versio 3.8.0 tai uudempi vaaditaan, jos aiot suorittaa tiedoston lähdeko
 
 * Viesti niille koodausmestareille, jos näet jotain, mitä voimme parantaa koodissamme, voit tehdä vetopyynnön. Tämä auttaa meitä todella paljon. :)
 
-## Siirrä versiosta 2.3.x versioon 2.4.0
-1. Luo uusi kansio nimeltä "data" c-realv2.exe- tai c-realV2.py-tiedoston viereen.
-2. laita vanha default.json-tiedosto tietokansioon
-3. Käynnistä botti uudelleen.
 
 ## Miksi tietokoneeni sanoi, että se on vaarallinen tiedosto/sisältää viruksen?
 * Aion tehdä itselleni selväksi - se ei ole virus.
