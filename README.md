@@ -1,5 +1,5 @@
 # Nuking Discord Server Bot/Nuke Bot
-## Tehnyt Ossi ja Vili
+## Tehnyt Ossi ja Vili (Tietoturva)
 
 Nopea ja ilmainen nuke botti
 
