@@ -1,315 +1,316 @@
 
 
-# Known issues
+# Tunnettuja ongelmia
 
-Selfbot - unable to detect all of the members in the server. Fetch members command will be added in 2.4 or later including mass DM.
+Selfbot - ei pysty havaitsemaan kaikkia palvelimen jäseniä. Hae jäsenet -komento lisätään 2.4:ssä tai uudemmassa, mukaan lukien massa-DM.
 
-# Commands document
+# Komennot asiakirja
 
-All commands are not case sensitive.
+Kaikki komennot eivät erota kirjainkoosta.
 
-\[a] - required argument
+\[a] - pakollinen argumentti
 
-{a} - optional argument
+{a} - valinnainen argumentti
 
-\[a='1'] or {a='1'} - a is set to '1' by default.
+\[a='1'] tai {a='1'} - a on oletuksena 1.
 
-[a#This is a comment] or {a#This is a comment}
+[a#Tämä on kommentti] tai {a#Tämä on kommentti}
 
-\[] - no arguement is needed
+\[] - väittelyä ei tarvita
 
-# descriptions will be written out soon...
+# kuvausta kirjoitetaan pian...
 ### `addChannel`
 
-* aliases: `aCh`, `aChannel`
-* description: Adds a channel to the server you are connected to.
-* params: \[name#No spaces allowed] {category=None#Spaces allowed} 
+* aliakset: "aCh", "aChannel".
+* kuvaus: Lisää kanavan palvelimeen, johon olet yhteydessä.
+* parametrit: \[nimi#Ei välilyöntejä sallittu] {category=Ei mitään#Välilyöntejä sallittu}
 
 ### `addRole`
 
-* aliases: `aRole`, `aR`
-* description: Adds a role to the server you are connected to.
-* params: \[roleName#Spaces allowed but you cannot of names end with numbers] {rolePermissions#Use a role permissions calculator, there's one provided in builder.html, and put it at the end of the roleName separated with space}
+* aliakset: "aRole", "aR".
+* kuvaus: Lisää roolin palvelimeen, johon olet yhteydessä.
+* params: \[roleName#Välilyönnit sallittu, mutta nimien ei voi päättyä numeroihin] {rolePermissions#Käytä roolilupien laskinta, joka löytyy builder.html:stä, ja laita se roolin nimi välilyönnillä erotettuna}
 
 ### `addEmoji`
 
-* aliases: `aEmoji`, `aEm`
-* description: Adds an emoji to the server you are connected to.
-* params: \[item#You can use a link, discord custom emojis, or your computer file path] {name#No spaces; this is only required when you are using a link in the first arg}
+* aliakset: "aEmoji", "aEm".
+* kuvaus: Lisää emojin palvelimeen, johon olet yhteydessä.
+* params: \[item#Voit käyttää linkkiä, discord mukautettuja hymiöitä tai tietokoneen tiedostopolkua] {nimi#Ei välilyöntejä; tämä vaaditaan vain, kun käytät linkkiä ensimmäisessä argssa}
 
 ### `addVoiceChannel`
 
-* aliases: `aVoiceChannel`, `aVC`
-* description: Adds a voiceChannel to the server you are connected to.
-* params: \[name#No spaces] {category=None#Spaces allowed}
+* aliakset: "aVoiceChannel", "aVC".
+* kuvaus: Lisää äänikanavan palvelimeen, johon olet yhteydessä.
+* parametrit: \[nimi#Ei välilyöntejä] {category=Ei mitään#välilyönnit sallittu}
 
 ### `addCategory`
 
-* aliases: `aCat`, `aCa`
-* description: Adds a category to the server you are connected to.
-* params: \[name#Spaces allowed]
+* aliakset: "aCat", "aCa".
+* kuvaus: Lisää kategorian palvelimeen, johon olet yhteydessä.
+* parametrit: \[nimi#välilyönnit sallittu]
 
-### `ban`
+### `kielto`
 
-* aliases: No command * aliases provided.
-* description: Bans someone in the server you are connected to.
-* params: \[user#Ping, id, or just username. If there are 2 or more same usernames, the script will always pick the one that comes first]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Panee jonkun palvelimeen, johon olet yhteydessä.
+* parametrit: \[käyttäjä#Ping, tunnus tai pelkkä käyttäjänimi. Jos samoja käyttäjätunnuksia on kaksi tai useampia, komentosarja valitsee aina ensimmäisen]
 
-### `banAll`
+### `kiellä kaikki`
 
-* aliases: No command * aliases provided.
-* description: bans everyone it can in the connected server.
-* params: \[]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: estää kaikki mahdolliset yhdistetyllä palvelimella.
+* parametrit: \[]
 
-### `bans`
+### `kiellot`
 
-* aliases: No command * aliases provided.
-* description: Shows all the bans in the server that you are connected to.
-* params: {pageNumber=1}
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Näyttää kaikki kiellot palvelimella, johon olet yhteydessä.
+* parametrit: {pageNumber=1}
 
-### `unban`
+### `poista porttikielto`
 
-* aliases: No command * aliases provided.
-* description: Unbans a banned user in the server.
-* perams: .unban @user#0000
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Poistaa porttikiellon palvelimelta.
+* Perams: .unban @user#0000
 
 ### `channelBomb`
 
-* aliases: No command * aliases provided.
-* description: Makes a ton of random channels in the connected server.
-* params: \[numberOfBombs#The number of channels you want to create] \[bombType#It can only be b64, an, or fixed]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Tekee paljon satunnaisia ​​kanavia yhdistetylle palvelimelle.
+* parametrit: \[numberOfBombs#Luottavien kanavien määrä] \[bombType#Se voi olla vain b64, an tai kiinteä]
 
-### `categoryBomb`
+### `kategoriapommi`
 
-* aliases: No command * aliases provided.
-* description: Makes a ton of random categorys in the connected server.
-* params: \[numberOfBombs#The number of categories you want to create] \[bombType#It can only be b64, an, or fixed]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Tekee paljon satunnaisia ​​luokkia yhdistetyssä palvelimessa.
+* parametrit: \[numberOfBombs#Luottavien luokkien määrä] \[bombType#Se voi olla vain b64, an tai kiinteä]
 
-### `channels`
+### `kanavat`
 
-* aliases: `tc`, `textchannels`, `textchannel`, `channel`
-* description: Shows the channels that are in the server you are connected to.
-* params: {pageNumber=1}
+* aliakset: "tc", "textchannels", "textchannel", "channel"
+* kuvaus: Näyttää kanavat, jotka ovat palvelimella, johon olet yhteydessä.
+* parametrit: {pageNumber=1}
 
-### `checkRolePermissions`
+### `tarkista RolePermissions`
 
-* aliases: `check`, `crp`
-* description: Checks the total roles permission you have.
-* params: \[user#Ping, id, or just username. If there are 2 or more same usernames, the script will always pick the one that comes first]
+* aliakset: `check`, `crp`
+* kuvaus: Tarkistaa kaikki roolit, jotka sinulla on.
+* parametrit: \[käyttäjä#Ping, tunnus tai pelkkä käyttäjänimi. Jos samoja käyttäjätunnuksia on kaksi tai useampia, komentosarja valitsee aina ensimmäisen]
 
-### `categories`
+### "luokat".
 
-* aliases: `cat`, `category`
-* description: Shows the categories that are in the server you are connected to.
-* params: {pageNumber=1}
+* aliakset: "kissa", "luokka".
+* kuvaus: Näyttää luokat, jotka ovat palvelimessa, johon olet yhteydessä.
+* parametrit: {pageNumber=1}
 
-### `clear`
+### `tyhjennä`
 
-* aliases: `purge`
-* description: Deletes a certain number of messages in a the channel you are using this command in.
-* params: {numberOfMessages=All#Leave this blank if you want all message in that channel to be deleted, but seriously deleting the channel would be much easier}
+* aliakset: `purge`
+* kuvaus: Poistaa tietyn määrän viestejä kanavalta, jossa käytät tätä komentoa.
+* params: {numberOfMessages=All#Jätä tämä tyhjäksi, jos haluat, että kanavan kaikki viestit poistetaan, mutta kanavan vakava poistaminen olisi paljon helpompaa}
 
-### `changeStatus`
+### `muuta tilaa`
 
-* aliases: `cs`
-* description: Changes the status of the bot.
-* params: \[status#offline, invisible, dnd (or do_not_disturb), online, or idle.]
+* aliakset: "cs".
+* kuvaus: Muuttaa botin tilaa.
+* parametrit: \[status#offline, invisible, dnd (tai do_not_disurb), online tai idle.]
 
-### `autostatus`
+### `automaattinen tila`
 
-* aliases: `as`
-* description: Automatically turns on/off the bot's status.
-* params: none
+* aliakset: "as".
+* kuvaus: Kytkee automaattisesti botin tilan päälle/pois päältä.
+* parametrit: ei mitään
 
 ### `autonick`
 
-* aliases: `an`
-* description: Automatically changes the bot's nickname.
-* params: none
+* aliakset: "an".
+* kuvaus: Muuttaa automaattisesti botin lempinimen.
+* parametrit: ei mitään
 
-### `connect`
+### `yhdistä`
 
-* aliases: `con`
-* description: Connects the bot to a server.
-* params: \{server#id or server name, and unicode username is allowed. If you are using this command in the server you want to connect to, you don't have to put an argument here if that's the case}
+* aliakset: `con`
+* kuvaus: yhdistää botin palvelimeen.
+* parametrit: \{palvelin#tunnus tai palvelimen nimi ja unicode-käyttäjänimi on sallittu. Jos käytät tätä komentoa palvelimessa, johon haluat muodostaa yhteyden, sinun ei tarvitse laittaa argumenttia tähän, jos näin on}
 
 ### `deleteRole`
 
-* aliases: `dRole`, `dR`
-* description: Deletes a role in the server you are connected to.
-* params: \[role#name or id]
+* aliakset: "dRole", "dR".
+* kuvaus: Poistaa roolin palvelimelta, johon olet yhteydessä.
+* parametrit: \[role#name tai id]
 
-### `deleteChannel`
+### `poista kanava`
 
-* aliases: `dChannel`, `dCh`
-* description: Deletes a channel in the server you are connected to.
-* params: \[channel#name or id]
+* aliakset: "dChannel", "dCh".
+* kuvaus: Poistaa kanavan palvelimelta, johon olet yhteydessä.
+* parametrit: \[kanavan#nimi tai tunnus]
 
 ### `deleteVoiceChannel`
 
-* aliases: `dVC`, `dVoiceChannel`
-* description: Deletes a voiceChannel in the server you are connected to.
-* params: 
+* aliakset: "dVC", "dVoiceChannel".
+* kuvaus: Poistaa äänikanavan palvelimelta, johon olet yhteydessä.
+* parametrit:
 
 ### `deleteCategory`
 
-* aliases: `dCat`, `dCategory`
-* description: Deletes a category in the server you are connected to.
-* params: 
+* aliakset: "dCat", "dCategory".
+* kuvaus: Poistaa kategorian palvelimelta, johon olet yhteydessä.
+* parametrit:
 
 ### `deleteCC`
 
-* aliases: `dCC`
-* description: Deletes a channel, voice channel, or category in the server you are connected to.
-* params: \[name#or id]
+* aliakset: "dCC".
+* kuvaus: Poistaa kanavan, äänikanavan tai luokan palvelimelta, johon olet yhteydessä.
+* parametrit: \[nimi#tai tunnus]
+
+##
 
 ### `deleteEmoji`
 
-* aliases: `dEm`
-* description: Deletes a emoji in the server you are connected to.
-* params: \[emoji#name or id]
+* aliakset: `dEm`
+* kuvaus: Poistaa emojin palvelimelta, johon olet yhteydessä.
+* parametrit: \[emoji#nimi tai tunnus]
 
-### `disableCommunityMode`
+### `DisableCommunityMode`
 
-* aliases: `dCM`, `dCommunityMode`
-* description: Disables community mode in the server you are connected to.
-* params: None
+* aliakset: "dCM", "dCommunityMode".
+* kuvaus: Poistaa yhteisötilan käytöstä palvelimessa, johon olet yhteydessä.
+* parametrit: Ei mitään
 
-### `deleteAllRoles`
+### `deleteAll Roles`
 
-* aliases: `dar`, `dAllRoles`
-* description: Deletes all roles in the connected server.
-* params: \[]
+* aliakset: "dar", "dAllRoles".
+* kuvaus: Poistaa kaikki roolit yhdistetystä palvelimesta.
+* parametrit: \[]
 
-### `deleteAllChannels`
+### `poista kaikki kanavat`
 
-* aliases: `dac`, `dAllChannels`
-* description: Deletes all channels in the connected server.
-* params: \[]
+* aliakset: "dac", "dAllChannels".
+* kuvaus: Poistaa kaikki kanavat yhdistetystä palvelimesta.
+* parametrit: \[]
 
 ### `deleteAllEmojis`
 
-* aliases: `dae`, `dAllEmoji`
-* description: Deletes all emojis in the connected server.
-* params: \[]
+* aliakset: "dae", "dAllEmoji".
+* kuvaus: Poistaa kaikki emojit yhdistetystä palvelimesta.
+* parametrit: \[]
 
 ### `deleteAllWebhooks`
 
-* aliases: `daw`, `dAllWebhooks`
-* description: Deletes akk webhooks in the connected server.
-* params: \[]
+* aliakset: "daw", "dAllWebhooks".
+* kuvaus: Poistaa akk webhookit yhdistetystä palvelimesta.
+* parametrit: \[]
 
-### `emojis`
+### "emojit".
 
-* aliases: No command * aliases provided.
-* description: Shows the emojis that are in the server you are connected to.
-* params: {pageNumber=1}
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Näyttää emojit, jotka ovat palvelimella, johon olet yhteydessä.
+* parametrit: {pageNumber=1}
 
-### `help`
+### `apua`
 
-* aliases: `h`, `commands`
-* description: Display all the commands. args: [Optional: type: all/names/command: default=names] [Optional: n: n of page]
-* params: {type=all#all/names/command just play around with this one. It should be very easy to understand.} {pageNumber=1#for type command}
+* aliakset: "h", "komennot".
+* kuvaus: Näytä kaikki komennot. args: [Valinnainen: tyyppi: kaikki/nimet/komento: oletus=nimet] [Valinnainen: n: sivun n]
+* params: {type=all#all/names/command vain leikkiä tällä. Sen pitäisi olla erittäin helppo ymmärtää.} {pageNumber=1#for type command}
 
-### `joinNuke`
+### `joinNukeen`
 
-* aliases: `nukeOnJoin`, `join nuke`
-* description: Nuke command will get executed in the next server the bot joins.
-* params: [boolean#True or false. True means turn it on. And false means turn it off]
+* aliakset: `nukeOnJoin`, `join nuke`
+* kuvaus: Nuke-komento suoritetaan seuraavassa palvelimessa, johon botti liittyy.
+* parametrit: [boolean#True or false. Totta tarkoittaa, että kytke se päälle. Ja väärä tarkoittaa, että se sammutetaan]
 
 ### `kaboom`
 
-* aliases: No command * aliases provided.
-* description: Combines the channelBomb, categoryBomb, and the categoryBomb all into one command.
-* params: \[numberOfBombs#The number of channels, categories, and roles you want to create] \[bombType#It can only be b64, an, or fixed]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Yhdistää kanavan Bomb, categoryBomb ja categoryBomb kaikki yhdeksi komennosta.
+* parametrit: \[numberOfBombs#Luottavien kanavien, luokkien ja roolien määrä] \[bombType#Se voi olla vain b64, an tai kiinteä]
 
-### `leave`
+### `lähde`
 
-* aliases: No command * aliases provided.
-* description: Leaves the server you choose to leave.
-* params: {server#name or id. If no arg is provided then the bot will leave the server it's connecting to}
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Poistuu palvelimelta, jonka päätät poistua.
+* parametrit: {palvelin#nimi tai tunnus. Jos arg-tiedostoa ei anneta, botti poistuu palvelimelta, johon se muodostaa yhteyden}
 
-### `leaveAll`
+### `jätä kaikki`
 
-* aliases: No command * aliases provided.
-* description: Leaves all servers it is in.
-* params: \[]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Jättää kaikki palvelimet, joissa se on.
+* parametrit: \[]
 
-### `link`
+### `linkki`
 
-* aliases: `l`
-* description: Sends an invite code for the bot.
-* params: \[]
+* aliakset: `l`
+* kuvaus: lähettää kutsukoodin bottiin.
+* parametrit: \[]
 
 ### `moveRole`
 
-* aliases: `mRole`, `mR`
-* description: Moves the given role in hierarchy(If you have the permissions) in the server you are connected to.
-* params: \[role#name or id. Spaces are allowed] \[position#position in hierarchy. The last space separated argument will be counted has the position]
+* aliakset: "mRole", "mR".
+* kuvaus: Siirtää annettua roolia hierarkiassa (jos sinulla on käyttöoikeudet) palvelimessa, johon olet yhteydessä.
+* parametrit: \[rooli#nimi tai tunnus. Välilyönnit ovat sallittuja] \[sijainti#sijainti hierarkiassa. Viimeinen välilyönnillä erotettu argumentti lasketaan, ja sillä on sijainti]
 
-### `nuke`
+### "ydin".
 
-* aliases: No command * aliases provided.
-* description: combines the banAll, deleteAllChannels, deleteAllEmojis, deleteAllRoles, deleteAllWebhooks commands into one big command. Also changes the connected servers name and icon. Plus, it runs commands inside of "after" after nuking.  
-* params: {useAfter=True#True or false. If you don't want to execute the after commands you entered in the config file you can set this to false}
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: yhdistää banAll-, deleteAllChannels-, deleteAllEmojis-, deleteAllRoles-, deleteAllWebhooks-komennot yhdeksi suureksi komennot. Muuttaa myös yhdistettyjen palvelimien nimeä ja kuvaketta. Lisäksi se suorittaa komentoja "jälkeen" sisällä nukingin jälkeen.
+* parametrit: {useAfter=True#True or false. Jos et halua suorittaa konfigurointitiedostoon kirjoittamiasi after-komentoja, voit asettaa tämän arvoon false}
 
-### `off`
+### `pois`
 
-* aliases: `logout`, `logoff`, `shutdown`, `stop`
-* description: Turns off the bot.
-* params: \[]
+* aliakset: "logout", "logoff", "shutdown", "stop"
+* kuvaus: Sammuttaa botin.
+* parametrit: \[]
 
-### `roleBomb`
+### "roolipommi".
 
-* aliases: No command * aliases provided.
-* description: Makes a ton of random roles in the connected server.
-* params: \[numberOfBombs#The number of roles you want to create] \[bombType#It can only be b64, an, or fixed]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Tekee paljon satunnaisia ​​rooleja yhdistetyssä palvelimessa.
+* parametrit: \[numberOfBombs#Luottavien roolien määrä] \[bombType#Se voi olla vain b64, an tai kiinteä]
 
-### `roles`
+### "roolit".
 
-* aliases: `ro`, `role`
-* description: Shows the roles that are in the server you are connected to.
-* params: {pageNumber=1}
+* aliakset: "ro", "rooli".
+* kuvaus: Näyttää roolit, jotka ovat palvelimessa, johon olet yhteydessä.
+* parametrit: {pageNumber=1}
 
-### `roleTo`
+### "rooli"
 
-* aliases: No command * aliases provided.
-* description: Gives a role to someone in the connected server.
-* params: \[user#id or ping only] \[role#name or id]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Antaa roolin jollekin yhdistetyssä palvelimessa.
+* parametrit: \[käyttäjän#tunnus tai vain ping] \[rooli#nimi tai tunnus]
 
-### `serverIcon`
+### `palvelinkuvake`
 
-* aliases: `si`, `changeServerIcon`
-* description: Changes the server icon in the connected server.
-* params: \[item#You can use a link, discord custom emojis, or your computer file path]
+* aliakset: `si`, `changeServerIcon`
+* kuvaus: Muuttaa palvelinkuvaketta yhdistetyssä palvelimessa.
+* parametrit: \[item#Voit käyttää linkkiä, discord mukautettuja hymiöitä tai tietokoneen tiedostopolkua]
 
-### `servers`
+### `palvelimet`
 
-* aliases: `se`, `server`
-* description: Shows the servers the bot is in.
-* params: {pageNumber=1}
+* aliakset: "se", "palvelin".
+* kuvaus: Näyttää palvelimet, joissa botti on.
+* parametrit: {pageNumber=1}
 
-### `serverName`
+### `palvelimenNimi`
 
-* aliases: `sn`, `changeServerName`
-* description: Changes the server name in the connected server.
-* params: \[name#Unicode is allowed]
+* aliakset: `sn`, `changeServerName`
+* kuvaus: Muuttaa palvelimen nimeä yhdistetyssä palvelimessa.
+* parametrit: \[nimi#Unicode on sallittu]
 
-### `unban`
+### `poista porttikielto`
 
-* aliases: No command * aliases provided.
-* description: Unbans someone in the server you are connected to.
-* params: \[user#name, id, or ping]
+* aliakset: Ei komentoa * aliaksia tarjotaan.
+* kuvaus: Poistaa porttikiellon palvelimelta, johon olet yhteydessä.
+* parametrit: \[käyttäjän#nimi, tunnus tai ping]
 
-### `voiceChannels`
+### `äänikanavat`
 
-* aliases: `vc`, `voicechannel`
-* description: Shows the voiceChannels that are in the server you are conencted to.
-* params: {pageNumber=1}
+* aliakset: "vc", "voicechannel".
+* kuvaus: Näyttää äänikanavat, jotka ovat palvelimessa, johon olet yhteydessä.
+* parametrit: {pageNumber=1}
 
 ### `webhook`
 
-* aliases: `webhooks`, `wh`
-* description: Creates, Attacks, Lists all of the weebhooks in the connected server.
-* params: {pageNumber=1}
-
+* aliakset: "webhooks", "wh".
+* kuvaus: Luo, hyökkää, luettelee kaikki yhdistetyn palvelimen webhookit.
+* parametrit: {pageNumber=1}
