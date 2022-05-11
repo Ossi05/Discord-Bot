@@ -1,31 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-"""
-MIT License
 
-Copyright (c) 2020 - 2021
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-Don't use the bot on real servers or use it to spam because this is breaking
-discord's ToS, and you will be resulted in an account deletion.
-"""
 # discord
 import discord, sys, requests, os, time
 from discord.ext import commands
@@ -79,16 +54,6 @@ def exit():
         pass
     sys.exit(1)
 
-def banner():
-    """Handler for non-unicode consoles"""
-    sys.stdout.buffer.write(f'''\
- ██████╗                  ██████╗ ███████╗ █████╗ ██╗     
-██╔════╝                  ██╔══██╗██╔════╝██╔══██╗██║   Version: {__VERSION__}
-██║         █████╗        ██████╔╝█████╗  ███████║██║     Made by:
-██║         ╚════╝        ██╔══██╗██╔══╝  ██╔══██║██║       TKperson
-╚██████╗                  ██║  ██║███████╗██║  ██║███████╗    and
- ╚═════╝                  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝      cyxl
-'''.encode('utf8'))
 
 # Check for > 1.5.1 discord version
 if version.parse('1.5.1') > version.parse(discord.__version__):
@@ -202,11 +167,11 @@ def updateVerbose():
     want_log_errors  = verbose & 1 << 3
 updateVerbose()
 
-# def randomProxy(protocol):
-#     # As long it works fine then i'm using this method
-#     if proxies is None or len(proxies) == 0:
-#         return None
-#     return {protocol: choice(proxies)}
+#def randomProxy(protokolla):
+# # Niin kauan kuin se toimii hyvin, käytän tätä menetelmää
+# jos välityspalvelimet on Ei mitään tai len(välityspalvelimet) == 0:
+# paluu Ei mitään
+# return {protokolla: valinta(välityspalvelimet)}
 
 is_selfbot = True
 headers = {}
@@ -229,12 +194,12 @@ def checkToken(token=None):
                 exit()
             else:
                 is_selfbot = False
-    # except requests.exceptions.ProxyError:
-    #     print('Bad proxy is being used. You can try to change a proxy or restart the bot.')
-    #     exit()
-    # except requests.exceptions.ConnectTimeout:
-    #     print(f'Proxy reached maximum load time: timeout is {timeout} seconds long.')
-    #     exit()
+    # paitsi requests.exceptions.ProxyError:
+     # print('Virheellinen välityspalvelin on käytössä. Voit yrittää vaihtaa välityspalvelinta tai käynnistää botin uudelleen.')
+     # exit()
+     # paitsi requests.exceptions.ConnectTimeout:
+     # print(f'Välityspalvelin saavutti enimmäislatausajan: aikakatkaisu on {timeout} sekuntia pitkä.')
+     # exit()
     except requests.exceptions.ConnectionError:
         print('You should probably consider connecting to the internet before using any discord related stuff. If you are connected to wifi and still seeing this message, then maybe try turn off your VPN/proxy/TOR node. If you are still seeing this message or you just don\'t what to turn off vpn, you can try to use websites like repl/heroku/google cloud to host the bot for you. The source code is on https://github.com/TKperson/Nuking-Discord-Server-Bot-Nuke-Bot.')
         exit()
@@ -244,7 +209,7 @@ def checkToken(token=None):
 
 checkToken()
 
-### check updates
+### tarkista päivitykset
 print('Checking update...           ', end='\r')
 github_version = requests.get('https://raw.githubusercontent.com/TKperson/Nuking-Discord-Server-Bot-Nuke-Bot/master/VERSION.txt').text
 if version.parse(github_version) > version.parse(__VERSION__):
@@ -329,9 +294,9 @@ async def log(ctx, message):
     - coming soon
     """
     if want_log_message:
-        # if not isDM(ctx) and ctx.guild.id == selected_server.id and 1 << 11 & selected_server.me.guild_permissions.value == 0:
-        #     consoleLog(message, True)
-        # else:
+        #jos ei, on DM(ctx) ja ctx.guild.id == selected_server.id ja 1 << 11 & selected_server.me.guild_permissions.value == 0:
+         # consoleLog(viesti, tosi)
+         #muuta:
         try:
             await ctx.send(message)
         except discord.errors.HTTPException:
@@ -561,24 +526,24 @@ def configIsSaved():
     # global settings_copy, settings # idk why python did this but after adding this for my 3.8.5 python it works
     return settings_copy == settings
 
-# class discordMember:
-#     def __init__(self, name, id_, discriminator=None, channel_id=None):
-#         self.name = name
-#         self.id = id_
-#         self.discriminator = discriminator
-#         self.channel_id = channel_id
+#luokan discordjäsen:
+# def __init__(self, name, id_, discriminator=Ei mitään, channel_id=Ei mitään):
+# itse.nimi = nimi
+# self.id = tunnus_
+# self.discriminator = syrjintä
+# self.channel_id = kanavan_tunnus
 # server_members = []
 
-# def copyMember(author):
-#     server_members.append(discordMember(author['username'], author['id'], author['discriminator']))
+# def copyJäsen(tekijä):
+# server_members.append(discordMember(author['username'], author['id'], author['discrinator']))
 
 # def autoFindChannel():
-#     for channel in selected_server.text_channels:
-#         for name in ['join', 'welcome', 'incoming']:
-#             if name in channel.name:
-#                 return channel.id
-#     return None
-######### Commands ##########
+# kanavalle valittuna_palvelin.tekstikanavat:
+# nimelle ['join', 'welcome', 'incoming']:
+# jos nimi kanavassa.nimi:
+# paluukanava.id
+# paluu Ei mitään
+######### Komennot ###########
 
 ######### Listing  ##########
 @commands.check(checkPerm)
@@ -661,88 +626,7 @@ async def members(ctx, command='1', *, args=None):
     print(len(selected_server.members))
     await embed(ctx, command, 'Members', selected_server.members)
 
-    # global server_members
-
-    # if command.isdigit():
-    #     if is_selfbot:
-    #         await embed(ctx, command, 'Members', server_members)
-    #     else:
-    #         await embed(ctx, command, 'Members', selected_server.members)
-    # else:
-    #     # def gFetchableChannel(channel_id): # check if the channel is good for fectching channel
-    #     #     pass
-    #     if command == 'fetch':
-    #         global fetching_members
-    #         args = args.split()
-
-    #         if not is_selfbot:
-    #             await log(ctx, f'Fetch command is only made for selfbot; since you are using normal bots, all members in the server `{selected_server.name}` has already be fetched. Try `{settings["command_prefix"]}members` to see all the fetched members.')
-    #             return
-
-    #         if args[0].lower() == 'auto':
-    #             channel_id = autoFindChannel()
-    #             if channel_id is None:
-    #                 await log(ctx, f'Unable to find welcome channels. You have to enter the welcome channel\'s in server `{selected_server.name}` manually.')
-    #                 return
-    #         elif args[0].lower() == 'stop':
-    #             fetching_members = False
-    #             await log(ctx, 'Fetching stopped.')
-    #             return
-    #         elif args[0].isdigit():
-    #             channel_id = args[0]
-    #         else:
-    #             await log(ctx, 'Invalid argument: You can only enter `fetch auto` or `fetch <channel_id>`.')
-    #             return
-    #         # Making sure channel_id is a string
-    #         channel_id = str(channel_id)
-
-    #         if len(args) < 3:
-    #             cooldown = 0
-    #         elif args[2].isdigit():
-    #             cooldown = int(args[2])
-    #         else:
-    #             await log(ctx, 'Please set a positive integer for the cooldown time of fetching every 100 messages. Use `0` if you don\'t want a cooldown.')
-    #             return
-
-    #         if args[1].lower() == 'fast':
-    #             fetching_members = True
-    #             url = f'https://discord.com/api/v8/channels/{channel_id}/messages?limit=100'
-    #             await log(ctx, f'```Fetching has started.\nCheck progress: `{settings["command_prefix"]}members`\nStop fetching: `{settings["command_prefix"]}members fetch stop`.\nCooldown: `{cooldown}` seconds.\nNote: duplicated users will only get removed after the fetching stops.```')
-    #             while fetching_members:
-    #                 r = requests.get(url, headers=headers, proxies=randomProxy('https'), timeout=timeout).json()
-    #                 if len(r) == 0:
-    #                     break
-    #                 for message in r:
-    #                     if message['mentions']: # len(message['content']) > 0 and 
-    #                         for mention in message['mentions']:
-    #                             copyMember(mention)
-    #                     elif len(message['attachments']) > 0:
-    #                         pass # no handler for images
-    #                     elif len(message['embeds']) > 0:
-    #                         pass # no handlers for embeds mentions
-    #                     else:
-    #                         copyMember(message['author'])
-    #                 url = f'https://discord.com/api/v8/channels/{channel_id}/messages?before={r[-1]["id"]}&limit=100'
-    #                 if cooldown > 0:
-    #                     await asyncio.sleep(cooldown)
-
-    #         elif args[1].lower() == 'all':
-    #             await log(ctx, f'```Fetching has started.\nCheck progress: `{settings["command_prefix"]}members`\nStop fetching: `{settings["command_prefix"]}members fetch stop`.\nCooldown: `{cooldown}` seconds.\nNote: duplicated users will only get removed after the fetching stops.```')
-    #             pass
-    #         else:
-    #             await log(ctx, 'You need to choose a fetching operation. Options are `all` or `fast`.')
-
-    #         # Removing duplicates
-
-    #         if len(server_members) > 1:
-    #             temp = []
-    #             temp.append(server_members[0])
-    #             for member_ in server_members:
-    #                 for i in temp:
-    #                     temp.append(member_)
-
-    #             server_members = temp
-
+  
 @commands.check(checkPerm)
 @client.command(name='bans')
 async def bans(ctx, n='1'):
@@ -1254,41 +1138,6 @@ async def roleBomb(ctx, n, method):
 
     q.join()
     consoleLog('Done role bombing.', True)
-
-# @commands.check(checkPerm)
-# @client.command(name='massDM', aliases=['md'])
-# async def massDM(ctx, command, *, args=None):
-#     if len(server_members) == 0:
-#         await log(ctx, 'You don\'t have anything anyone to dm with :(. Fetch some members.')
-#         return
-
-#     if args is not None:
-#         args = args.split()
-
-#     if command == 'channels' or command == 'channel':
-#         if args is None:
-#             args = []
-#             args.append('1')
-#         members_ = []
-#         for i in range(len(server_members)):
-#             if members_[i].channel_id is not None:
-#                 members_[i].id = members_[i].channel_id
-
-#         await embed(ctx, args[0], 'MassDM targets', members_)
-#     elif command == 'load':
-#         for member_ in server_members:
-#             print(member_.name)
-#             if int(member_.id) == client.user.id:
-#                 continue
-#             # asdf = requests.post('https://discordapp.com/api/v8/users/@me/channels', headers=headers, json={'recipient_id': member_.id}, proxies=randomProxy('https'), timeout=timeout).json()
-#             member_.__init__(member_.name, member_.id, member_.discriminator, client.get_user(member_.id).dm_channel.id)
-#     elif command == 'start':
-#         massDM_channels = [i.channel_id for i in server_members if i.channel_id is not None]
-#         if len(massDM_channels) == 0:
-#             await log(ctx, 'You don\'t have any DM loaded.')
-#             return
-#         for channel_id in massDM_channels:
-#             q.put((f'https://discordapp.com/api/v8/channels{channel_id}/messages', headers))
 
 ######### webhooks ##########
 @commands.check(checkPerm)
@@ -2407,26 +2256,7 @@ def silence_event_loop_closed(func):
     return wrapper
 _ProactorBasePipeTransport.__del__ = silence_event_loop_closed(_ProactorBasePipeTransport.__del__)
 
-# PrivilegedIntents fixed fail :')
 
-# async def login():
-#     global client
-#     try:
-#         await client.start(settings['token'], bot=not is_selfbot)
-#     except discord.PrivilegedIntentsRequired:
-#         print('PrivilegedIntentsRequired: This field is required to request for a list of members in the discord server that the bot is connected to. Watch https://youtu.be/DXnEFoHwL1A?t=44 to see how to turn on the required field.')
-#         # exit()
-#         client._connection = client._get_state(
-#                                 intents=client.intents.default()
-#                                 ) # reset intents to default
-#         input('lol')
-#         await login()
-#     except Exception as e:
-#         print(e)
-#     finally:
-#         sys.stdout.write('Exiting...               \n')
-
-# asyncio.run(login()) # if login failed because of the privileged intents then ask if user wants to turn off the intents
 
 try:
     client.run(settings['token'], bot=not is_selfbot)
