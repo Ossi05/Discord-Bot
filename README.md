@@ -35,7 +35,7 @@ Tekstissä voi olla huono suomi, koska se on minun kolmas kieli
 
 
 ## Miksi tietokoneeni sanoi, että se on vaarallinen tiedosto/sisältää viruksen?
-* Aion tehdä itselleni selväksi - se ei ole virus.
+* no virus 100%
 * Ihmisille, jotka eivät luota julkaistuihin versioihin ja jotka eivät halua ladata pythonia, on toinenkin tapa käyttää bottia. Käytä https://repl.it/, luo tili, valitse "uusi repl" vasemmasta yläkulmasta, valitse python, klikkaa "luo repl", kopioi ja liitä [lähdekoodi] repliin ja napsauta yläreunassa olevaa Suorita-painiketta.
 
 ## Pääkäyttö (Lue `.config` komento alla ennen yhteydenottoa)
